@@ -17,7 +17,6 @@ db.init_app(app)
 def index():
     return make_response({'message': 'Flask SQLAlchemy Lab 1'}, 200)
 
-# ✅ Only ONE version of this function should exist
 @app.route('/earthquakes/<int:id>')
 def get_earthquake_by_id(id):
     quake = Earthquake.query.filter_by(id=id).first()
